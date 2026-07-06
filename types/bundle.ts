@@ -1,7 +1,7 @@
 export interface ProductVariant {
   id: string;
   label: string;
-  swatch: string;
+  image: string;
 }
 
 export interface Product {
@@ -16,8 +16,6 @@ export interface Product {
   title: string;
 
   description: string;
-
-  image: string;
 
   price: number;
 
