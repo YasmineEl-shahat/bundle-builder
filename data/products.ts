@@ -1,20 +1,17 @@
-
 import { Product } from "@/types/bundle";
-export const products: Product[]= [
+
+export const products: Product[] = [
+  // ---------------- CAMERAS ----------------
   {
     id: "camera1",
     category: "cameras",
     title: "Wyze Cam v4",
-    description: "The clearest Wyze Cam ever made. Learn More",
+    description: "The clearest Wyze Cam ever made.",
+    image: "/images/cameras/v4/variants/white.webp",
     price: 27.98,
     comparePrice: 35.98,
     badge: "Save 22%",
     variants: [
-      {
-        id: "black",
-        label: "Black",
-        image: "/images/cameras/v4/variants/black.webp",
-      },
       {
         id: "white",
         label: "White",
@@ -22,16 +19,23 @@ export const products: Product[]= [
       },
       {
         id: "gray",
-        label: "Gray",
+        label: "Grey",
         image: "/images/cameras/v4/variants/gray.webp",
+      },
+      {
+        id: "black",
+        label: "Black",
+        image: "/images/cameras/v4/variants/black.webp",
       },
     ],
   },
+
   {
     id: "camera2",
     category: "cameras",
     title: "Wyze Cam Pan v3",
-    description: "360° pan and 180° tilt security camera. Learn More",
+    description: "360° pan and 180° tilt security camera.",
+    image: "/images/cameras/pan-v3/variants/white.webp",
     price: 34.98,
     comparePrice: 39.98,
     badge: "Save 12%",
@@ -48,11 +52,14 @@ export const products: Product[]= [
       },
     ],
   },
+
   {
     id: "camera3",
     category: "cameras",
     title: "Wyze Cam Floodlight v2",
-    description: "2K floodlight camera with a 160° wide-angle view for your garage. Learn More",
+    description:
+      "2K floodlight camera with a 160° wide-angle view for your garage.",
+    image: "/images/cameras/floodlight-v2/variants/white.webp",
     price: 69.98,
     comparePrice: 89.98,
     badge: "Save 22%",
@@ -69,18 +76,59 @@ export const products: Product[]= [
       },
     ],
   },
+
   {
     id: "camera4",
     category: "cameras",
     title: "Wyze Duo Cam Doorbell",
-    description: "Two cameras. Two views. Double the porch protection. Learn More",
+    description:
+      "Two cameras. Two views. Double the porch protection.",
+    image: "/images/cameras/duo-doorbell/variants/default.webp",
     price: 69.98,
-    variants: [
-      {
-        id: "default",
-        label: "Default",
-        image: "/images/cameras/duo-doorbell/variants/default.webp",
-      },
-    ],
+  },
+
+  // ---------------- PLAN ----------------
+
+  {
+    id: "plan1",
+    category: "plans",
+    title: "Cam Unlimited",
+    description: "Unlimited cloud recording for all your cameras.",
+    image: "/images/plans/cam-unlimited.webp",
+    price: 9.99,
+    comparePrice: 12.99,
+  },
+
+  // ---------------- SENSORS ----------------
+
+  {
+    id: "sensor1",
+    category: "sensors",
+    title: "Wyze Sense Motion Sensor",
+    description: "Detect movement anywhere in your home.",
+    image: "/images/sensors/motion-sensor.webp",
+    price: 59.98,
+  },
+
+  {
+    id: "sensor2",
+    category: "sensors",
+    title: "Wyze Sense Hub",
+    description: "Required hub for Wyze Sense devices.",
+    image: "/images/sensors/sense-hub.webp",
+    price: 0,
+    comparePrice: 29.92,
+    required: true,
+  },
+
+  // ---------------- ACCESSORIES ----------------
+
+  {
+    id: "accessory1",
+    category: "accessories",
+    title: "Wyze MicroSD Card (256GB)",
+    description: "Local continuous recording.",
+    image: "/images/accessories/microsd-256.webp",
+    price: 41.96,
   },
 ];

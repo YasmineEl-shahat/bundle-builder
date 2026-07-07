@@ -1,3 +1,4 @@
+type Category = "cameras" | "plans" | "sensors" | "accessories";
 export interface ProductVariant {
   id: string;
   label: string;
@@ -7,15 +8,13 @@ export interface ProductVariant {
 export interface Product {
   id: string;
 
-  category:
-    | "cameras"
-    | "plans"
-    | "sensors"
-    | "accessories";
+  category: Category;
 
   title: string;
 
   description: string;
+
+  image: string;
 
   price: number;
 
@@ -24,10 +23,19 @@ export interface Product {
   badge?: string;
 
   variants?: ProductVariant[];
+
+  required?: boolean;
 }
 
 export interface SelectedItem {
   productId: string;
   variantId?: string;
   quantity: number;
+}
+
+export interface Step {
+  id: string;
+  number: number;
+  title: string;
+  category: Category;
 }
