@@ -6,6 +6,7 @@ import {
   decrementItem,
   setActiveVariant,
 } from "@/store/slices/bundleSlice";
+import { products } from "@/data/products";
 
 export function useSelection() {
   const dispatch = useAppDispatch();
@@ -50,8 +51,11 @@ export function useSelection() {
   };
 
   const getSelectedCount = (category: string) => {
-    return selections.filter((item) => item.productId.startsWith(category))
-      .length;
+    return selections.filter((selection) => {
+      const product = products.find((p) => p.id === selection.productId);
+
+      return product?.category === category;
+    }).length;
   };
 
   return {
