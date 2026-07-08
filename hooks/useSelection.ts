@@ -1,5 +1,3 @@
-import { useMemo } from "react";
-
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import {
   incrementItem,
