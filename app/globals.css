@@ -4,6 +4,7 @@
 
 @theme inline {
   --color-gray-c-900: #1f1f1f;
+  --color-gray-c-800: #575757;
   --color-gray-c-700: #525963;
   --color-gray-c-500: #cccccc;
   --color-gray-c-400: #ced6de;
@@ -16,6 +17,10 @@
 
   --color-primary: #4e2fd2;
   --color-primary-70: #4e2fd2b2;
+
+  --color-blue: #0000ee;
+
+  --color-danger: #d8392b;
 
   --radius-xl: 0.625rem;
 
