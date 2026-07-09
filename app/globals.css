@@ -13,4 +13,11 @@
 
   --color-green: #0aa288;
   --color-green-subtle: #1df0bb0a;
+
+  --color-primary: #4e2fd2;
+  --color-primary-70: #4e2fd2b2;
+
+  --radius-xl: 0.625rem;
+
+  --font-sans: var(--font-gilroy, "Arial", sans-serif);
 }
