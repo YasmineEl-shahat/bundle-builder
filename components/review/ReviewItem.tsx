@@ -40,7 +40,7 @@ export default function ReviewItem({ item }: Props) {
         onDecrease={() => decrease(item.productId, item.variantId)}
       />
 
-      <div>
+      <div className="flex flex-col items-end gap-1">
         {item.comparePrice && (
           <p className="text-gray-c-675 line-through text-sm">
             ${(item.comparePrice * item.quantity).toFixed(2)}
