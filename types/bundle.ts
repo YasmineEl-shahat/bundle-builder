@@ -43,3 +43,21 @@ export interface Step {
   nextLabel?: string;
   icon: LucideIcon;
 }
+
+export interface ReviewItem {
+  productId: string;
+  category: Category;
+
+  title: string;
+
+  image: string;
+
+  variantLabel?: string;
+  variantId?: string;
+
+  quantity: number;
+
+  price: number;
+
+  comparePrice?: number;
+}

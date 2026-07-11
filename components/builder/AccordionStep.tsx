@@ -40,7 +40,6 @@ export default function AccordionStep({
 
         <div className="mt-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            ``
             {icon}
             <h2 className="text-[22px] font-semibold text-gray-c-obsidian">
               {title}

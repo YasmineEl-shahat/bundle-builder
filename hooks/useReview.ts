@@ -26,6 +26,8 @@ export function useReview() {
 
         image: variant?.image ?? product.image,
 
+        variantId: selection.variantId,
+
         variantLabel: variant?.label,
 
         quantity: selection.quantity,

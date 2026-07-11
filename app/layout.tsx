@@ -1,5 +1,6 @@
 import ReduxProvider from "@/store/provider";
 import { Glory } from "next/font/google";
+import "./globals.css";
 
 const glory = Glory({
   subsets: ["latin"],
