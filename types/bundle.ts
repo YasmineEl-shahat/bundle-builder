@@ -1,3 +1,5 @@
+import { LucideIcon } from "lucide-react";
+
 type Category = "cameras" | "plans" | "sensors" | "accessories";
 export interface ProductVariant {
   id: string;
@@ -38,4 +40,6 @@ export interface Step {
   number: number;
   title: string;
   category: Category;
+  nextLabel?: string;
+  icon: LucideIcon;
 }
