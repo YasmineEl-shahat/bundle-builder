@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { Separator } from "../ui/separator";
 
 interface AccordionStepProps {
   value: string;
@@ -32,13 +33,15 @@ export default function AccordionStep({
   children,
 }: AccordionStepProps) {
   return (
-    <AccordionItem value={value} className="bg-blue-100 rounded-xl py-4 px-3.5">
+    <AccordionItem
+      value={value}
+      className={`rounded-xl pt-8 pb-4 ${isOpen ? "bg-blue-100" : ""}`}
+    >
       <AccordionTrigger className="hover:no-underline">
-        <span className="text-[12px] uppercase tracking-[2px] text-gray-c-650 absolute">
+        <span className="text-[12px] uppercase tracking-[2px] text-gray-c-650 absolute -top-6 px-3.5">
           Step {stepNumber} of 4
         </span>
-
-        <div className="mt-4 flex items-center justify-between">
+        <div className="mt-4 flex items-center justify-between px-3.5">
           <div className="flex items-center gap-2">
             {icon}
             <h2 className="text-[22px] font-semibold text-gray-c-obsidian">
@@ -56,7 +59,7 @@ export default function AccordionStep({
         </div>
       </AccordionTrigger>
 
-      <AccordionContent>
+      <AccordionContent className="px-3.5">
         {children}
 
         {nextButtonLabel && (
