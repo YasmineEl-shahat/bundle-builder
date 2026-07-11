@@ -54,8 +54,8 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Card
       className={`
-        rounded-xl p-2.5 transition-all flex gap-5 
-        ${quantity > 0 && "border border-primary-70"}
+        rounded-xl p-2.5 transition-all flex flex-row gap-5 ring-0 bg-white
+        ${quantity > 0 ? "border-2 border-primary-70" : "border-0"}
       `}
     >
       <div>
@@ -75,16 +75,16 @@ export default function ProductCard({ product }: ProductCardProps) {
         />
       </div>
 
-      <div>
+      <div className="flex-1">
         {/* Title */}
-        <h3 className="text-xl text-gray-c-900 font-semibold">
-          {product.title}
-        </h3>
+        <h3 className="text-gray-c-900 font-semibold">{product.title}</h3>
 
         {/* Description */}
         <p className="mt-2 text-xs text-gray-c-900/70">
           {product.description}
-          <Button className=" text-blue underline">Learn More</Button>
+          <Button className=" text-blue underline" variant="secondary">
+            Learn More
+          </Button>
         </p>
 
         {/* Variants */}
@@ -99,7 +99,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         )}
 
         {/* Footer */}
-        <div className="mt-8 flex items-center justify-between">
+        <div className="mt-2.5 flex items-center justify-between">
           <QuantityStepper
             quantity={quantity}
             onIncrease={() => increase(product.id, selectedVariant)}

@@ -25,7 +25,7 @@ export default function VariantSelector({
             type="button"
             onClick={() => onSelect(variant.id)}
             className={cn(
-              "flex items-center gap-1 rounded-xs border border-0.5  bg-white p-1 transition-all",
+              "flex items-center gap-1 rounded-xs border border-0.5 bg-white hover:bg-white p-1 transition-all",
               isSelected
                 ? "border-green ring-1 ring-green bg-green-subtle"
                 : "border-gray-c-500 hover:border-green hover:bg-green-subtle",

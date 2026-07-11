@@ -34,7 +34,7 @@ export default function AccordionStep({
   return (
     <AccordionItem value={value} className="bg-blue-100 rounded-xl py-4 px-3.5">
       <AccordionTrigger className="hover:no-underline">
-        <span className="text-[12px] uppercase tracking-[2px] text-gray-c-650">
+        <span className="text-[12px] uppercase tracking-[2px] text-gray-c-650 absolute">
           Step {stepNumber} of 4
         </span>
 
@@ -46,17 +46,11 @@ export default function AccordionStep({
             </h2>
           </div>
 
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 absolute right-4 top-2">
             {isOpen && (
               <span className="text-sm font-medium text-primary">
                 {selectedCount} selected
               </span>
-            )}
-
-            {isOpen ? (
-              <ChevronUp className="h-2 w-2.5 text-primary" />
-            ) : (
-              <ChevronDown className="h-2 w-2.5 text-primary" />
             )}
           </div>
         </div>
