@@ -29,7 +29,7 @@ export default function BundleBuilder() {
           value={step.id}
           stepNumber={step.number}
           title={step.title}
-          icon={<step.icon className="h-6 w-6" />}
+          icon={<step.icon className="h-6 w-6 text-gray-c-675" />}
           selectedCount={getSelectedCount(step.category)}
           isOpen={activeStep === step.id}
           nextButtonLabel={step.nextLabel}
