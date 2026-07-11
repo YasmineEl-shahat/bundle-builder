@@ -37,7 +37,39 @@ export function useReview() {
     });
   }, [selections]);
 
+  const cameras = items.filter((i) => i.category === "cameras");
+
+  const sensors = items.filter((i) => i.category === "sensors");
+
+  const accessories = items.filter((i) => i.category === "accessories");
+
+  const plans = items.filter((i) => i.category === "plans");
+
+  const subtotal = items.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0,
+  );
+
+  const compareTotal = items.reduce(
+    (sum, item) => sum + (item.comparePrice ?? item.price) * item.quantity,
+    0,
+  );
+
+  const savings = compareTotal - subtotal;
+
+  const shipping = 0;
+
+  const total = subtotal + shipping;
+
   return {
-    items,
+    cameras,
+    sensors,
+    accessories,
+    plans,
+    subtotal,
+    compareTotal,
+    savings,
+    shipping,
+    total,
   };
 }
