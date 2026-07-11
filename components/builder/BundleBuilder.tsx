@@ -22,6 +22,7 @@ export default function BundleBuilder() {
       onValueChange={(values) => {
         changeStep(values[0]);
       }}
+      className="space-y-3"
     >
       {steps.map((step) => (
         <AccordionStep
