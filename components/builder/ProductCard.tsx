@@ -26,12 +26,19 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   const quantity = getQuantity(product.id, selectedVariant);
 
+  const handleCardSelect = () => {
+    if (quantity === 0) {
+      increase(product.id, selectedVariant);
+    }
+  };
+
   return (
     <Card
       className={`
-        rounded-xl p-2.5 transition-all flex flex-row gap-5 ring-0 bg-white
+        rounded-xl p-2.5 transition-all flex flex-row gap-5 ring-0 bg-white cursor-pointer
         ${quantity > 0 ? "border-2 border-primary-70" : "border-0"}
       `}
+      onClick={handleCardSelect}
     >
       <div>
         {/* Badge */}

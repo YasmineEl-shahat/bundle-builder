@@ -23,7 +23,10 @@ export default function VariantSelector({
           <Button
             key={variant.id}
             type="button"
-            onClick={() => onSelect(variant.id)}
+            onClick={(event) => {
+              event.stopPropagation();
+              onSelect(variant.id);
+            }}
             className={cn(
               "flex items-center gap-1 rounded-xs border border-0.5 bg-white hover:bg-white p-1 transition-all",
               isSelected

@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { BundleState, SelectedItem } from "@/types/bundle";
+import { products } from "@/data/products";
+import { BundleState } from "@/types/bundle";
 
 interface IncrementPayload {
   productId: string;
@@ -22,6 +23,8 @@ const bundleSlice = createSlice({
 
     incrementItem: (state, action: PayloadAction<IncrementPayload>) => {
       const { productId, variantId } = action.payload;
+      const product = products.find((item) => item.id === productId);
+      const isPlan = product?.category === "plans";
 
       const existing = state.selections.find(
         (item) => item.productId === productId && item.variantId === variantId,
@@ -30,6 +33,12 @@ const bundleSlice = createSlice({
       if (existing) {
         existing.quantity++;
       } else {
+        if (isPlan) {
+          state.selections = state.selections.filter(
+            (item) => products.find((p) => p.id === item.productId)?.category !== "plans",
+          );
+        }
+
         state.selections.push({
           productId,
           variantId,
@@ -40,6 +49,8 @@ const bundleSlice = createSlice({
 
     decrementItem: (state, action: PayloadAction<IncrementPayload>) => {
       const { productId, variantId } = action.payload;
+      const product = products.find((item) => item.id === productId);
+      const isPlan = product?.category === "plans";
 
       const existing = state.selections.find(
         (item) => item.productId === productId && item.variantId === variantId,
@@ -53,6 +64,12 @@ const bundleSlice = createSlice({
         state.selections = state.selections.filter(
           (item) =>
             !(item.productId === productId && item.variantId === variantId),
+        );
+      }
+
+      if (isPlan && !state.selections.some((item) => item.productId === productId)) {
+        state.selections = state.selections.filter(
+          (item) => products.find((p) => p.id === item.productId)?.category !== "plans",
         );
       }
     },

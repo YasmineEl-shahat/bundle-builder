@@ -24,7 +24,10 @@ export default function QuantityStepper({
       <Button
         type="button"
         variant="quantity"
-        onClick={onDecrease}
+        onClick={(event) => {
+          event.stopPropagation();
+          onDecrease();
+        }}
         disabled={isMin}
       >
         <Minus size={16} />
@@ -35,7 +38,10 @@ export default function QuantityStepper({
       <Button
         type="button"
         variant="quantity"
-        onClick={onIncrease}
+        onClick={(event) => {
+          event.stopPropagation();
+          onIncrease();
+        }}
         disabled={isMax}
       >
         <Plus size={16} />
