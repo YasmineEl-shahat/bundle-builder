@@ -99,6 +99,37 @@ export const products: Product[] = [
     comparePrice: 12.99,
   },
 
+  {
+    id: "plan2",
+    category: "plans",
+    title: "Cam Plus",
+    description: "Smart AI detections and event video history.",
+    image: "/images/plans/cam-unlimited.webp",
+    price: 2.99,
+    comparePrice: 4.99,
+    badge: "Popular",
+  },
+
+  {
+    id: "plan3",
+    category: "plans",
+    title: "Cam Plus Lite",
+    description: "Essential cloud video events for a smaller setup.",
+    image: "/images/plans/cam-unlimited.webp",
+    price: 1.99,
+    comparePrice: 2.99,
+  },
+
+  {
+    id: "plan4",
+    category: "plans",
+    title: "Cam Protect",
+    description: "Extended video retention and sharing features.",
+    image: "/images/plans/cam-unlimited.webp",
+    price: 4.99,
+    comparePrice: 6.99,
+  },
+
   // ---------------- SENSORS ----------------
 
   {
