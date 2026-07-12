@@ -83,7 +83,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
           <div>
             {product.comparePrice && (
-              <p className="line-through text-danger mb-1">
+              <p className="line-through text-danger">
                 ${product.comparePrice.toFixed(2)}
               </p>
             )}
