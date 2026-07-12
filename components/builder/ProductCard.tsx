@@ -18,8 +18,14 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const { activeVariants, changeVariant, increase, decrease, getQuantity, remove } =
-    useSelection();
+  const {
+    activeVariants,
+    changeVariant,
+    increase,
+    decrease,
+    getQuantity,
+    remove,
+  } = useSelection();
 
   const selectedVariant =
     activeVariants[product.id] ?? product.variants?.[0]?.id;
