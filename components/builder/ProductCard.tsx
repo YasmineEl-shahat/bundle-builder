@@ -75,22 +75,22 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         {/* Footer */}
         <div className="mt-2.5 flex items-center justify-between">
-          <QuantityStepper
-            quantity={quantity}
-            onIncrease={() => increase(product.id, selectedVariant)}
-            onDecrease={() => decrease(product.id, selectedVariant)}
-          />
+          {product.category !== "plans" && (
+            <QuantityStepper
+              quantity={quantity}
+              onIncrease={() => increase(product.id, selectedVariant)}
+              onDecrease={() => decrease(product.id, selectedVariant)}
+            />
+          )}
 
-          <div>
+          <div className="flex flex-col">
             {product.comparePrice && (
-              <p className="line-through text-danger">
+              <span className="line-through text-danger">
                 ${product.comparePrice.toFixed(2)}
-              </p>
+              </span>
             )}
 
-            <p className="line-through text-gray-c-800">
-              ${product.price.toFixed(2)}
-            </p>
+            <span className="text-gray-c-800">${product.price.toFixed(2)}</span>
           </div>
         </div>
       </div>
