@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#6ee7b7"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" rx="28" fill="#f7fbff"/>
+  <g transform="translate(40,36)">
+    <path d="M80 0 L146 32 v56 c0 40 -34 72 -66 72 s-66 -32 -66 -72 V32 L80 0 z" fill="url(#g)" stroke="#e6e6ff" stroke-width="2"/>
+    <text x="80" y="70" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="34" text-anchor="middle" fill="#fff">WYZE</text>
+  </g>
+</svg>
