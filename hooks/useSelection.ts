@@ -2,6 +2,7 @@ import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import {
   incrementItem,
   decrementItem,
+  removeItem,
   setActiveVariant,
 } from "@/store/slices/bundleSlice";
 import { products } from "@/data/products";
@@ -40,6 +41,15 @@ export function useSelection() {
     );
   };
 
+  const remove = (productId: string, variantId?: string) => {
+    dispatch(
+      removeItem({
+        productId,
+        variantId,
+      }),
+    );
+  };
+
   const getQuantity = (productId: string, variantId?: string) => {
     return (
       selections.find(
@@ -62,6 +72,7 @@ export function useSelection() {
 
     increase,
     decrease,
+    remove,
     changeVariant,
 
     getQuantity,

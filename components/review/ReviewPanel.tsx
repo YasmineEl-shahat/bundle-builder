@@ -29,19 +29,11 @@ export default function ReviewPanel() {
 
       <ReviewSection title="Cameras" items={cameras} />
 
-      <Separator className="mt-5 mb-4" />
-
       <ReviewSection title="Sensors" items={sensors} />
-
-      <Separator className="mt-5 mb-4" />
 
       <ReviewSection title="Accessories" items={accessories} />
 
-      <Separator className="mt-5 mb-4" />
-
       <ReviewSection title="Plan" items={plans} />
-
-      <Separator className="mt-5 mb-4" />
 
       <PricingSummary />
     </aside>

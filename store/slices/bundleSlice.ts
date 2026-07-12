@@ -35,7 +35,9 @@ const bundleSlice = createSlice({
       } else {
         if (isPlan) {
           state.selections = state.selections.filter(
-            (item) => products.find((p) => p.id === item.productId)?.category !== "plans",
+            (item) =>
+              products.find((p) => p.id === item.productId)?.category !==
+              "plans",
           );
         }
 
@@ -67,11 +69,24 @@ const bundleSlice = createSlice({
         );
       }
 
-      if (isPlan && !state.selections.some((item) => item.productId === productId)) {
+      if (
+        isPlan &&
+        !state.selections.some((item) => item.productId === productId)
+      ) {
         state.selections = state.selections.filter(
-          (item) => products.find((p) => p.id === item.productId)?.category !== "plans",
+          (item) =>
+            products.find((p) => p.id === item.productId)?.category !== "plans",
         );
       }
+    },
+
+    removeItem: (state, action: PayloadAction<IncrementPayload>) => {
+      const { productId, variantId } = action.payload;
+
+      state.selections = state.selections.filter(
+        (item) =>
+          !(item.productId === productId && item.variantId === variantId),
+      );
     },
 
     setActiveVariant: (
@@ -93,6 +108,7 @@ export const {
   setActiveStep,
   incrementItem,
   decrementItem,
+  removeItem,
   setActiveVariant,
   restoreBundle,
 } = bundleSlice.actions;

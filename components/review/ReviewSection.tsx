@@ -1,3 +1,4 @@
+import { Separator } from "../ui/separator";
 import ReviewItem from "./ReviewItem";
 import { ReviewItem as ReviewItemType } from "@/types/bundle";
 
@@ -21,6 +22,8 @@ export default function ReviewSection({ title, items }: Props) {
           />
         ))}
       </div>
+
+      <Separator className="mt-5 mb-4" />
     </section>
   );
 }
