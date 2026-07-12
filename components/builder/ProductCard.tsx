@@ -67,7 +67,21 @@ export default function ProductCard({ product }: ProductCardProps) {
 
       <div className="flex-1">
         {/* Title */}
-        <h3 className="text-gray-c-900 font-semibold">{product.title}</h3>
+        {product.category === "plans" ? (
+          (() => {
+            const [first, ...rest] = product.title.split(" ");
+            return (
+              <h3 className="font-bold">
+                <span className="text-black">{first}</span>
+                {rest.length > 0 && (
+                  <span className="text-primary"> {rest.join(" ")}</span>
+                )}
+              </h3>
+            );
+          })()
+        ) : (
+          <h3 className="text-gray-c-900 font-semibold">{product.title}</h3>
+        )}
 
         {/* Description */}
         <p className="mt-2 text-xs text-gray-c-900/70">

@@ -25,9 +25,23 @@ export default function ReviewItem({ item }: Props) {
       />
 
       <div className="flex-1">
-        <p className="text-sm text-gray-c-obsidian leading-tight">
-          {item.title}
-        </p>
+        {item.category === "plans" ? (
+          (() => {
+            const [first, ...rest] = item.title.split(" ");
+            return (
+              <h3 className="font-bold">
+                <span className="text-black">{first}</span>
+                {rest.length > 0 && (
+                  <span className="text-primary"> {rest.join(" ")}</span>
+                )}
+              </h3>
+            );
+          })()
+        ) : (
+          <p className="text-sm text-gray-c-obsidian leading-tight">
+            {item.title}
+          </p>
+        )}
 
         {item.variantLabel && (
           <p className="text-xs text-gray-c-700">{item.variantLabel}</p>
