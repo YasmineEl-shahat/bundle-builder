@@ -34,11 +34,13 @@ export default function ReviewItem({ item }: Props) {
         )}
       </div>
 
-      <QuantityStepper
-        quantity={item.quantity}
-        onIncrease={() => increase(item.productId, item.variantId)}
-        onDecrease={() => decrease(item.productId, item.variantId)}
-      />
+      {item.category !== "plans" && (
+        <QuantityStepper
+          quantity={item.quantity}
+          onIncrease={() => increase(item.productId, item.variantId)}
+          onDecrease={() => decrease(item.productId, item.variantId)}
+        />
+      )}
 
       <div className="flex flex-col items-end gap-1">
         {item.comparePrice && (
