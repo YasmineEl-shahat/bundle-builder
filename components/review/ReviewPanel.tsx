@@ -11,7 +11,7 @@ export default function ReviewPanel() {
   const { cameras, sensors, accessories, plans } = useReview();
 
   return (
-    <aside className="bg-blue-100 rounded-xl py-4 px-3.5">
+    <aside className="bg-blue-100 rounded-xl py-4 px-3.5 h-fit">
       <span className="text-[12px] uppercase tracking-[2px] text-gray-c-650">
         Review
       </span>
