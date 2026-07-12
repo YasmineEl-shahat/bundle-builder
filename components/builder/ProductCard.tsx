@@ -1,28 +1,3 @@
-// badge
-
-// image
-
-// title
-
-// description
-
-// learn more
-
-// variants
-
-// price
-
-// quantity stepper
-
-// const currentVariant =
-// activeVariants[product.id]
-
-// const quantity =
-// getQuantity(
-//     product.id,
-//     currentVariant
-// )
-
 "use client";
 
 import Image from "next/image";
