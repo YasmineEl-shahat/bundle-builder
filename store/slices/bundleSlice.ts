@@ -1,15 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { SelectedItem } from "@/types/bundle";
+import { BundleState, SelectedItem } from "@/types/bundle";
 
 interface IncrementPayload {
   productId: string;
   variantId?: string;
-}
-
-interface BundleState {
-  activeStep: string;
-  selections: SelectedItem[];
-  activeVariants: Record<string, string>;
 }
 
 const initialState: BundleState = {
@@ -72,22 +66,8 @@ const bundleSlice = createSlice({
     ) => {
       state.activeVariants[action.payload.productId] = action.payload.variantId;
     },
-
-    setSelections: (state, action: PayloadAction<SelectedItem[]>) => {
-      state.selections = action.payload;
-    },
-
-    clearSelections: (state) => {
-      state.selections = [];
-    },
-
-    resetBundle: () => initialState,
-
-    initializeActiveVariants: (
-      state,
-      action: PayloadAction<Record<string, string>>,
-    ) => {
-      state.activeVariants = action.payload;
+    restoreBundle(state, action: PayloadAction<BundleState>) {
+      return action.payload;
     },
   },
 });
@@ -97,10 +77,7 @@ export const {
   incrementItem,
   decrementItem,
   setActiveVariant,
-  setSelections,
-  clearSelections,
-  resetBundle,
-  initializeActiveVariants,
+  restoreBundle,
 } = bundleSlice.actions;
 
 export default bundleSlice.reducer;

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 
 import { useReview } from "@/hooks/useReview";
 import { Badge } from "../ui/badge";
+import SaveBundleLink from "./SaveBundleLink";
 
 export default function PricingSummary() {
   const { compareTotal, savings, shipping, total } = useReview();
@@ -85,24 +86,7 @@ export default function PricingSummary() {
       </Button>
 
       {/* Save */}
-
-      <Button
-        variant="link"
-        className="
-          block
-          w-full
-          text-center
-          text-sm
-          italic
-          text-gray-c-650
-          underline
-          underline-offset-4
-          transition-colors
-          hover:text-primary
-        "
-      >
-        Save my system for later
-      </Button>
+      <SaveBundleLink />
     </section>
   );
 }

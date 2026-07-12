@@ -61,3 +61,9 @@ export interface ReviewItem {
 
   comparePrice?: number;
 }
+
+export interface BundleState {
+  activeStep: string;
+  selections: SelectedItem[];
+  activeVariants: Record<string, string>;
+}

@@ -1,11 +1,5 @@
-import BundleBuilder from "@/components/builder/BundleBuilder";
-import ReviewPanel from "@/components/review/ReviewPanel";
+import Home from "@/components/Home";
 
-export default function Home() {
-  return (
-    <main className="grid lg:grid-cols-[1fr_400px] gap-8 p-10">
-      <BundleBuilder />
-      <ReviewPanel />
-    </main>
-  );
+export default function App() {
+  return <Home />;
 }
